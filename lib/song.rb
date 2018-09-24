@@ -1,9 +1,10 @@
 class Song
-  attr_reader :name
-  attr_accessor :artist, :genre
+  attr_accessor :artist, :name, :genre
+
   def initialize(name, genre)
     @name = name
     @genre = genre
     genre.add_song(self)
   end
+
 end
