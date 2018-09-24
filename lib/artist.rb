@@ -1,22 +1,17 @@
-class Artist
-  attr_accessor :name, :songs
+class Doctor
+  attr_accessor :appointments, :name
 
   def initialize(name)
     @name = name
-    @songs = []
+    @appointments = []
   end
 
-  def add_song(song)
-    @songs<<song
-    song.artist = self
+  def add_appointment(appointment)
+    @appointments << appointment
+    appointment.doctor =  self
   end
 
-  def songs
-    @songs
+  def patients
+    @appointments.collect {|appointment| appointment.patient}
   end
-
-  def genres
-    @songs.collect {|song| song.genre}
-  end
-
 end
